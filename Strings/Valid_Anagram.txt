@@ -1,0 +1,56 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+
+Approach1
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+       map<char,int> mp1,mp2;
+
+       for(auto ch:s){
+        mp1[ch]++;
+       }
+
+       for(auto ch:t){
+        mp2[ch]++;
+        }
+
+       // if(mp1.size()!=mp2.size()) return false;
+        return mp1==mp2;
+
+    }
+};
+
+Approach2
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(t.begin(),t.end());
+        sort(s.begin(),s.end());
+        return s==t;
+    }
+};
+
+Approach3
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        unordered_map<char,int> s1;
+        unordered_map<char,int>t1;
+        if(s.size()!=t.size()) return false;
+        for(auto ch:s){
+            s1[ch]++;
+        }
+        for(auto ch :t){
+            if(s1.find(ch)==s1.end() || s1[ch]==0){
+                return false;  //not found or alreday zero
+            }
+            else{
+                s1[ch]--;
+            }
+        }
+        return true;
+    }
+};

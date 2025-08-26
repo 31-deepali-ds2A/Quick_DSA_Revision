@@ -1,0 +1,53 @@
+Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the maximum number of nested parentheses.
+
+ //Approach1(stack)
+
+ class Solution {
+public:
+    int maxDepth(string s) {
+        int open=0;
+        int maxLen=0;
+        int n=s.size(); int i=0;
+        stack<char> st;
+
+        while(i<n){
+
+            if(s[i]=='('){
+               st.push(s[i]);
+
+            }
+             if(s[i]==')'){
+                int t=st.size();
+                maxLen=max(maxLen,t);
+                st.pop();
+            }
+            i++;
+        }
+        return maxLen;
+    }
+};
+
+//Approach2
+
+class Solution {
+public:
+    int maxDepth(string s) {
+        int open=0;
+        int maxLen=0;
+        int n=s.size(); int i=0;
+
+        while(i<n){
+
+            if(s[i]=='('){
+                open++;
+               
+            }
+             if(s[i]==')'){
+                maxLen=max(maxLen,open);
+                open--;
+            }
+            i++;
+        }
+        return maxLen;
+    }
+};
