@@ -1,4 +1,10 @@
-Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the maximum number of nested parentheses.
+//Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the 
+//maximum number of nested parentheses.
+
+#include<vector>
+#include<string>
+#include<stack>
+using namespace std;
 
  //Approach1(stack)
 

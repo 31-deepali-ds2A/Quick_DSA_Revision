@@ -1,4 +1,4 @@
-You are given an integer array arr of length n that represents a permutation of the integers 
+/*You are given an integer array arr of length n that represents a permutation of the integers 
 in the range [0, n - 1].
 We split arr into some number of chunks (i.e., partitions), and individually sort each chunk. 
 After concatenating them, the result should equal the sorted array.
@@ -9,7 +9,10 @@ The best way to do this is to think that as all the numbers are unique and we kn
 like : 1, 0, 2, 3, 4
 running sum : 1, 1, 3, 6, 10
 i*(i+1)/2 : 0, 1, 3, 6, 10
-for this, sum = i*(i+1)/2 condition is correct 4 times, so answer is 4
+for this, sum = i*(i+1)/2 condition is correct 4 times, so answer is 4 */
+
+#include<vector>
+using namespace std;
 
  class Solution {
 public:
