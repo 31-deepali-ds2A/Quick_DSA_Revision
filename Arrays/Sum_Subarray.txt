@@ -1,0 +1,40 @@
+Given an array arr[], find the sum of all the subarrays of the given array.
+
+// approach1 (TLE)
+class Solution {
+  public:
+    int subarraySum(vector<int>& arr) {
+        // code here
+        int sum=0;
+      //  vector<vector<int>> ans;
+        
+        for(int i=0;i<arr.size();i++){
+            int temp=0;
+            for(int j=i;j<arr.size();j++){
+                temp+=arr[j];
+                sum+=temp;
+              
+            }
+        }
+        
+       
+        return sum;
+    }
+};
+
+//optimized Solution
+class Solution {
+  public:
+    int subarraySum(vector<int>& arr) {
+      
+        int sum=0;
+        int n=arr.size();
+      
+        for(int i=0;i<arr.size();i++){
+            sum+= arr[i]*(i+1)*(n-i);
+           // each element appears exactly (i+1)*(n-i) times
+            }
+       
+        return sum;
+    }
+};

@@ -1,0 +1,61 @@
+Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+
+In other words, return true if one of s1's permutations is the substring of s2.
+
+//Brute force(Tle)
+class Solution {
+public:
+    bool checkInclusion(string s1, string s2) {
+        int k=s1.size();
+        int n=s2.size();
+        sort(s1.begin(),s1.end());
+
+        for(int i=0;i<=n-k;i++){
+            string temp="";
+            for(int j=i;j<i+k;j++){
+                temp+=s2[j];
+            }
+            sort(temp.begin(),temp.end());
+            cout<<temp<<" ";
+            if(s1==temp){
+                return true;
+            }
+        }
+        return false;
+
+    }
+};
+
+// approach2
+class Solution {
+public:
+    bool checkInclusion(string s1, string s2) {
+
+        // sliding window
+        int k=s1.size();
+        int n=s2.size();
+        if(k>n) return false;
+
+        unordered_map<char,int> freq1,freq2;
+
+        for(char ch:s1){
+            freq1[ch]++;
+        }
+
+        for(int i=0;i<k;i++){
+            freq2[s2[i]]++;
+        }
+        if(freq1==freq2) return true;
+
+        for(int i=k;i<n;i++){
+            freq2[s2[i]]++;
+            freq2[s2[i-k]]--;
+            if(freq2[s2[i-k]]==0){
+                freq2.erase(s2[i-k]);
+            }
+            if(freq1==freq2) return true;
+        }
+        return false;
+
+    }
+};
