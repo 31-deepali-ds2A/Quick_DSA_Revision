@@ -44,7 +44,7 @@ class Solution {
         int n=arr.size();
         sort(arr.begin(),arr.end());
         int maxidx=n-1, minidx=0;
-       int M=arr[maxidx]+1;
+        int M=arr[maxidx]+1;
        
        for(int i=0;i<n;i++){
            if(i%2==0){
