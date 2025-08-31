@@ -5,24 +5,18 @@ This repository is my personal journey of mastering Data Structures & Algorithms
 
 📌 About the Repository
 
-Covers important DSA topics in a structured manner.
-
-Each folder/file corresponds to a specific topic/problem type.
-
-Includes clean, optimized, and well-commented code.
-
-Focused on quick revision before coding interviews, contests, or exams.
+1-Covers important DSA topics in a structured manner.
+2-Each folder/file corresponds to a specific topic/problem type.
+3-Includes clean, optimized, and well-commented code.
+4-Focused on quick revision before coding interviews, contests, or exams.
 
 
 🎯 Goals of This Repo
 
-Strengthen core DSA concepts.
-
-Build a handy revision guide for interviews.
-
-Improve problem-solving skills by consistent practice.
-
-Track progress and maintain a growth log.
+1-Strengthen core DSA concepts.
+2-Build a handy revision guide for interviews.
+3-Improve problem-solving skills by consistent practice.
+4-Track progress and maintain a growth log.
 
 
 🤝 Contributions
