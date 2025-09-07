@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+ //rotate right;
 // ====================== Approach 1 ======================
 // Using reverse method (Optimal O(n), O(1))
 class Solution1 {
