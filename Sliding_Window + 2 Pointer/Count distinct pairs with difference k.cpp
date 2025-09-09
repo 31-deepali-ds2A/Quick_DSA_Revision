@@ -32,3 +32,45 @@ class Solution {
         return count;
     }
 };
+
+//2-pointer
+class Solution {
+  public:
+    int TotalPairs(vector<int> nums, int k) {
+        // Code here
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        int i=0, j=1;
+        
+        int count=0;
+        
+        while(i<n && j<n){
+            if(i==j){
+                j++;
+                continue;
+            }
+            if(nums[j]-nums[i]<k){
+                j++;
+            }
+            else if(nums[j]-nums[i]>k){
+                i++;
+                if(i==j) j++;
+            }
+            else{
+                count++;
+                
+                 int e1=nums[i], e2=nums[j];
+                
+                while(i<n && e1==nums[i]){
+                    i++;
+                }
+                while(j<n && e2==nums[j]){
+                    j++;
+                    
+                }
+
+            }
+        }
+        return count;
+    }
+};
