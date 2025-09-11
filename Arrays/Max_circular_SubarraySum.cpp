@@ -25,7 +25,10 @@ class Solution {
     }
 };
 
+
 // optimized(kadane's algorithm)
+
+// uses->> max(normal kadane (maxSum), totalSum-minSum);
 
 class Solution {
   public:
