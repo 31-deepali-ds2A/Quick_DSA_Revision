@@ -31,7 +31,7 @@ class Solution {
                 }
             }
         }
-        
+        // to verify
         for(int i=0;i<n;i++){
             
             if(iknow[i]==0 && knowMe[i]==n-1) return i;
@@ -63,6 +63,7 @@ class Solution {
         int top=st.top();
         st.pop();
         
+        // to verify
         for(int i=0;i<n;i++){
             if(i==top) continue; // if diagonal
             
