@@ -1,7 +1,11 @@
 # 🚀 Quick DSA Revision  
 
 Welcome to **Quick_DSA_Revision!** 🎯  
+<<<<<<< HEAD
 This repository is my personal journey of mastering **Data Structures & Algorithms (DSA)**. I’m revising concepts **topic-wise** and pushing well-structured code solutions for quick reference and practice on .  
+=======
+This repository is my personal journey of mastering **Data Structures & Algorithms (DSA)**. I’m revising concepts **topic-wise** and pushing well-structured code solutions for quick reference and practice on regular basis. 
+>>>>>>> b6e9fb325dee44732ee5e5d8890ab7d88d09b461
 
 ---
 
