@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-//brute
+//brute O(log n)
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
@@ -12,7 +12,7 @@ public:
     }
 };
 
-// heap
+// heap-> O(n log n)
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
@@ -26,5 +26,19 @@ public:
        ans*=pq.top()-1;
      //  pq.pop();
        return ans;
+    }
+};
+
+// O(n)
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+      int first = 0, second = 0;
+        for (int x : nums) {
+            if (x > first) { second = first; first = x; }
+            else if (x > second) { second = x; }
+        }
+        return (first - 1) * (second - 1);
+
     }
 };
