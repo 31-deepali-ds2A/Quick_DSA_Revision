@@ -5,7 +5,11 @@ After concatenating them, the result should equal the sorted array.
 Return the largest number of chunks we can make to sort the array.
 
 #Intution
-The best way to do this is to think that as all the numbers are unique and we know the size of array, so we know all elements in the array. so, we know that in the sorted array arr[i] = i, it means that if we compute a running sum of elements in the array, then if at any moment, the sum = i*(i+1)/2, then we should make a partition at that point. continuing this process will give us the max no. of partitions.
+The best way to do this is to think that as all the numbers are unique and we know the size of array, 
+so we know all elements in the array. so, we know that in the sorted array arr[i] = i, it means that 
+if we compute a running sum of elements in the array, then if at any moment, the sum = i*(i+1)/2,
+ then we should make a partition at that point. continuing this process will give us the max no.
+  of partitions.
 like : 1, 0, 2, 3, 4
 running sum : 1, 1, 3, 6, 10
 i*(i+1)/2 : 0, 1, 3, 6, 10
@@ -30,5 +34,38 @@ public:
     
         return k;
 
+    }
+};
+
+//approach 2
+class Solution {
+public:
+    int maxChunksToSorted(vector<int>& arr) {
+        
+       int mx=INT_MIN;
+       int chunks=0;
+       for(int i=0;i<arr.size();i++){
+        mx=max(mx,arr[i]);
+        if(mx==i) chunks++;
+       }
+       return chunks;
+    }
+};
+
+// approach 3- stack one
+
+class Solution {
+public:
+    int maxChunksToSorted(vector<int>& arr) {
+        
+      stack<int> st;
+      for(int num:arr){
+        int mx=num;
+        while(!st.empty() && st.top()>num){
+            mx=max(mx,st.top()); st.pop();
+        }
+        st.push(mx);
+      }
+      return st.size();
     }
 };
