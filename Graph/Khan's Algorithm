@@ -1,0 +1,44 @@
+// topological sort - using modified BFS is known as Khan's Algorithm
+// uses indegree concept
+
+class Solution {
+  
+  public:
+    vector<int> topoSort(int V, vector<vector<int>>& edges) {
+        // create adj List
+        vector<int> adj[V];
+        
+              for (auto it : edges) {
+            adj[it[0]].push_back(it[1]);
+        }
+                
+        int indegree[V]={0};
+        // countall indegrees
+        for(int i=0;i<V;i++){
+            for(auto it:adj[i]){
+                indegree[it]++;
+            }
+        }
+        
+        queue<int> q;
+        // push all node with indegree 0, as they can appear in start
+        for(int i=0;i<V;i++){
+            if(indegree[i]==0){
+                q.push(i);
+            }
+        }
+        vector<int> ans;
+
+        while(!q.empty()){
+            int node=q.front();
+            q.pop();
+            
+            for(auto it:adj[node]){
+                indegree[it]--;   // remove the edge when node is already visted
+                if(indegree[it]==0) q.push(it);
+            }
+            ans.push_back(node);
+        }
+        return ans;
+    }
+};
