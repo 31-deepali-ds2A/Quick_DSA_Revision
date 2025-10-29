@@ -35,3 +35,24 @@ public:
         return count;
     }
 };
+
+
+// approach 2
+class Solution {
+public:
+    int numberOfSubarrays(vector<int>& nums, int k) {
+        unordered_map<int,int> freq;
+        freq[0]=1;
+
+        int cnt=0,ans=0;
+        for(int num:nums){
+            if(num%2) cnt++;
+
+            if(freq.find(cnt-k)!=freq.end()){
+                ans+=freq[cnt-k];
+            }
+            freq[cnt]++;
+        }
+        return ans;
+    }
+};
